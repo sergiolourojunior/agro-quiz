@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+body, html { font-family: 'Roboto', sans-serif; background-color: #EFEFEF; color: #333; min-height: 100%; }
+
+.panel { margin-top: 40px; }
+
+ul { padding-left: 15px; }
+ul li { list-style: none; margin-bottom: 5px; }
+label { font-size: 18px; padding: 3px 0; }
+input[type=checkbox], input[type=radio] { margin-top: 6px; vertical-align: top; }
+
+
+.wrap-perguntas h4 { font-size: 24px; font-weight: 600; }
+
+.panel-default>.panel-heading { position: relative; }
+.andamento { position: absolute; top: 10px; bottom: 10px; right: 15px; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.andamento strong { font-weight: bold; font-size: 16px; }
+
+.wrap-final ul li { padding: 5px; }
+.wrap-final .item-pergunta { margin-bottom: 15px; }
