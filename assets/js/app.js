@@ -2,6 +2,7 @@ let app = new Vue({
     el: '#app',
     data: {
         nome: null,
+        nomeValido: null,
         perguntas: [
             'Qual a sigla da universidade?',
             'Qual o nome do curso?',
@@ -22,7 +23,7 @@ let app = new Vue({
     },
     methods: {
         comecar: function () {
-            if(this.nome.length >= 3) {
+            if(this.nomeValido) {
                 this.indice = 0;
             } else {
                 alert('Preencha seu nome com pelo menos 3 caracteres.')
@@ -39,7 +40,10 @@ let app = new Vue({
                 return;
             }
 
-            $('input[type="radio"]:checked', document).prop('checked', false);
+            var ele = document.getElementsByName("opcao");
+            for(var i=0;i<ele.length;i++) {
+                ele[i].checked = false;
+            }
 
             this.indice++;
         },
@@ -53,8 +57,6 @@ let app = new Vue({
         },
         calcularNota: function () {
             for(id_pergunta in this.respostas) {
-                // console.log('pergunta:', this.perguntas[id_pergunta]);
-
                 if(this.gabarito[id_pergunta] == this.respostas[id_pergunta]) {
                     this.nota++;
                 }
@@ -68,6 +70,21 @@ let app = new Vue({
             this.finalizado = false;
             this.indice = -1;
             this.nota = 0;
+            this.nomeValido = null;
         }
+    },
+    watch: {
+        nome: function () {
+            if(this.nome.length > 0 && this.nome.length < 3) {
+                this.nomeValido = false;
+            } else if(this.nome.length >= 3) {
+                this.nomeValido = true;
+            } else {
+                this.nomeValido = null;
+            }
+        }
+    },
+    mounted: function () {
+        document.getElementById('loader').remove();
     }
 })

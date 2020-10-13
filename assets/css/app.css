@@ -17,4 +17,4 @@ input[type=checkbox], input[type=radio] { margin-top: 6px; vertical-align: top; 
 .andamento strong { font-weight: bold; font-size: 16px; }
 
 .wrap-final ul li { padding: 5px; }
-.wrap-final .item-pergunta { margin-bottom: 15px; }
+.wrap-final .item-pergunta { margin-top: 40px; }

@@ -7,6 +7,8 @@
 </head>
 <body>
 
+    <div id="loader" style="background-color: #EFEFEF; position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 999;"></div>
+
     <div id="app">
         <div class="container">
             <div class="row">
@@ -21,12 +23,13 @@
                         </div>
 
                         <div class="panel-body">
-                            <div class="wrap-inicio" v-if="indice < 0 && !finalizado">
+                            <div class="wrap-inicio" v-if="indice < 0 && !finalizado" v-on:keyup.enter = "comecar()">
                                 <h3>Seja bem vindo(a) ao QUIZ sobre XXX.</h3>
                                 <h4>Antes de começar, por favor diga o seu nome.</h4>
                                 <p>
-                                    <div class="form-group">
+                                    <div class="form-group" v-bind:class="{ 'has-error' : !nomeValido, 'has-success' : nomeValido }">
                                         <input type="text" class="form-control input-lg" placeholder="Digite seu nome" v-model="nome">
+                                        <span id="helpBlock2" class="help-block">Preencha no mínimo 3 caracteres.</span>
                                     </div>
                                     <button class="btn btn-success btn-block btn-lg" v-on:click="comecar()">Começar</button>
                                 </p>
@@ -78,14 +81,10 @@
         </div>
     </div>
 
+    <script src="assets/js/vue.js"></script>
+    <script src="assets/js/app.js"></script>
 
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/app.css">
-
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <!-- <script src="assets/js/vue.js"></script> -->
-    <script src="assets/js/app.js"></script>
-    <script src="assets/js/jquery-3.5.1.min.js"></script>
 </body>
 </html>
