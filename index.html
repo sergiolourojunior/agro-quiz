@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QUIZ</title>
+    <title>Quiz dos EPI's</title>
 </head>
 <body>
 
@@ -15,7 +15,7 @@
                 <div class="col-md-6 col-md-offset-3">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h1>QUIZ</h1>
+                            <h1>Quiz dos EPI's</h1>
                             <div class="andamento" v-if="indice >= 0">
                                 <strong class="text-primary">{{ nome }}</strong>
                                 <small>{{ indice + 1 }} / {{ perguntas.length }}</small>
@@ -24,7 +24,7 @@
 
                         <div class="panel-body">
                             <div class="wrap-inicio" v-if="indice < 0 && !finalizado" v-on:keyup.enter = "comecar()">
-                                <h3>Seja bem vindo(a) ao QUIZ sobre XXX.</h3>
+                                <h3>Seja bem vindo(a) ao QUIZ sobre EPI's.</h3>
                                 <h4>Antes de começar, por favor diga o seu nome.</h4>
                                 <p>
                                     <div class="form-group" v-bind:class="{ 'has-error' : !nomeValido, 'has-success' : nomeValido }">
@@ -66,6 +66,20 @@
                                     </ul>
                                 </div>
 
+                                <div class="feedback-final">
+                                    <div class="alert alert-danger text-center" v-show="nota <= 30">
+                                        Melhor estudar mais antes de ir ao laboratório.
+                                    </div>
+
+                                    <div class="alert alert-warning text-center" v-show="nota > 30 && nota <= 60">
+                                        Pode ir ao laboratório, mas cuidado para não ter problemas.
+                                    </div>
+
+                                    <div class="alert alert-success text-center" v-show="nota > 60">
+                                        Parabéns! Todo equipado e com essas informações é seguro ir ao laboratório.
+                                    </div>
+                                </div>
+
                                 <div class="clearfix">
                                     <div class="form-group">
                                         <button class="btn btn-success pull-right" v-on:click="novoTeste()">Novo teste</button>
@@ -74,7 +88,7 @@
                             </div>
                         </div>
 
-                        <div class="panel-footer"></div>
+                        <div class="panel-footer">Química I – Agronomia – Universidade Federal de Pelotas</div>
                     </div>
                 </div>
             </div>

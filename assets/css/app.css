@@ -18,3 +18,4 @@ input[type=checkbox], input[type=radio] { margin-top: 6px; vertical-align: top; 
 
 .wrap-final ul li { padding: 5px; }
 .wrap-final .item-pergunta { margin-top: 40px; }
+.wrap-final .feedback-final { margin: 50px 0 30px; }
