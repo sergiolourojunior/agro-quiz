@@ -4,18 +4,20 @@ let app = new Vue({
         nome: null,
         nomeValido: null,
         perguntas: [
-            'Qual a sigla da universidade?',
-            'Qual o nome do curso?',
-            'Qual o nome da cidade que está situada a universidade?',
-            'Qual a cor oficial do curso?'
+            'Qual vestimenta deve ser utilizada em uma laboratório?',
+            'No caso de queimaduras com algum tipo de ácido, quais medidas tomar?',
+            'Em caso de ocorrência de fogo no ambiente do laboratório qual primeira medida a tomar?',
+            'Qual conduta deve ser adotada em um laboratório?',
+            'Em quais situações deve-se utilizar o chuveiro de emergência?'
         ],
         opcoes: [
-            ['UCPel', 'UFPel', 'UFRGS', 'FURG'],
-            ['Agronomia', 'Veterinária', 'Matemática', 'Meio Ambiente'],
-            ['Rio Grande', 'Porto Alegre', 'Pelotas', 'Salvador'],
-            ['Verde', 'Azul', 'Amarelo', 'Vermelho']
+            ['Jaleco, braços tapados e calça cobrindo as pernas', 'Sapato aberto, camiseta e bermuda/shorts', 'Sapato fechado, camiseta manga curta'],
+            ['Lavar rapidamente na água para resolver superficialmente o ferimento', 'Lavar em água corrente por bastante tempo, ver qual a situação da queimadura e se apresentar vermelhidão ir até o médico', 'Utilizar pomadas para queimadura'],
+            ['Utilizar água', 'Utilizar extintor de CO2', 'Chamar responsável do local'],
+            ['Estar de cabelo solto (pessoas com cabelo comprido)', 'Usar acessórios como anéis, brincos e relógios', 'Trabalhar em pé para melhora da mobilidade, usar óculos de proteção, cabelo preso e não usar acessórios'],
+            ['Acidentes com produtos químicos ou fogo', 'Corte na pele', 'Lavar compartimentos para que sejam reaproveitados']
         ],
-        gabarito: [1, 0, 2, 1],
+        gabarito: [0, 1, 1, 2, 0],
         respostas: [],
         indice: -1,
         finalizado: false,
